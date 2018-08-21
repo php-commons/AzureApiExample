@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <ApplicationInsightsResourceId>/subscriptions/cedaaa27-2f65-4e01-a24d-80a457a8a58a/resourcegroups/php-ndykman-api/providers/microsoft.insights/components/php-ndykman-api</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/cedaaa27-2f65-4e01-a24d-80a457a8a58a/resourcegroups/php-ndykman-api/providers/microsoft.insights/components/php-ndykman-api</ApplicationInsightsAnnotationResourceId>
+    <AssemblyName>PHP.AzureApiExample.Api</AssemblyName>
+    <RootNamespace>PHP.AzureApiExample.Api</RootNamespace>
+    <UserSecretsId>80f0f6a7-96e0-4835-bdf6-5e36332662b7</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.1\PHP.AzureApiExample.Api.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netcoreapp2.1\PHP.AzureApiExample.Api.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="8.0.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.4.1" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PHP.AzureApiExample.Domain\PHP.AzureApiExample.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+</Project>
